@@ -1,0 +1,67 @@
+// Single line comment (stays in Sass file)
+
+/* 
+
+Multi-line comment (Compiles to CSS file)
+
+*/
+@use 'sass:math';
+@use 'colours';
+@use 'mixins';
+@use 'typography';
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: colours.$grey;
+    font-family: typography.$sans-serif-font;
+}
+
+.wrapper{
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+a.btn {
+    @include mixins.btn($btn-background: colours.$cyan, $btn-text-color: colours.$black);
+}
+
+a.btn-success {
+    @include mixins.btn($btn-background: colours.$green, $btn-text-color: colours.$white);
+}
+
+a.btn-info {
+    @include mixins.btn($btn-background: colours.$blue, $btn-text-color: colours.$white);
+}
+
+// Quote Style
+%quote {
+    text-transform: uppercase;
+    font-style: italic;
+    color: colours.$blue;
+    font-size: 11px;
+    font-family: typography.$serif-font;
+}
+
+.quote {
+    @extend %quote;
+}
+
+section {
+    @extend %quote;
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 15px;
+    border-left: 2px solid #000;
+    padding-left: 10px;
+}
+
+.box-1 {
+    background-color: colours.$blue;
+    display: block;
+    width: math.div(10px, 50px) * 100%;
+    height: 300px;
+    text-align: center;
+    color: colours.$white;
+    font-size: 18px;
+}

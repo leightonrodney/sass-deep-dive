@@ -1,0 +1,13 @@
+// Mixin
+@mixin btn($btn-background, $btn-text-color) {
+    background-color: $btn-background;
+    color: $btn-text-color;
+    display: block;
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    max-width: 150px;
+    text-align: center;
+}
